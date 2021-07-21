@@ -12,13 +12,15 @@
 #include "freertos/task.h"
 #include "esp_system.h"
 #include "esp_spi_flash.h"
+#include "Myconsole.h"
+
 
 void app_main(void)
 {
     printf("Hello world!\n");
-
+    console_main();
     /* Print chip information */
-    esp_chip_info_t chip_info;
+    /*esp_chip_info_t chip_info;
     esp_chip_info(&chip_info);
     printf("This is %s chip with %d CPU core(s), WiFi%s%s, ",
             CONFIG_IDF_TARGET,
@@ -39,5 +41,5 @@ void app_main(void)
     }
     printf("Restarting now.\n");
     fflush(stdout);
-    esp_restart();
+    esp_restart();*/
 }
