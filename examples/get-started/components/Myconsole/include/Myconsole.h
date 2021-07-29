@@ -6,3 +6,5 @@
 #include "esp_log.h"
 
 void console_main(void);
+
+void register_command(char* cmd, char* cmd_info, void(*func_pointer)());
