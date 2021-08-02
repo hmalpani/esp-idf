@@ -7,6 +7,7 @@
    CONDITIONS OF ANY KIND, either express or implied.
 */
 #include <stdio.h>
+#include <string.h>
 #include "sdkconfig.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
@@ -14,16 +15,17 @@
 #include "esp_spi_flash.h"
 #include "Myconsole.h"
 
-void hello(int num_arg, char** arg)
+char* hello(int num_arg, char** arg, char* buf)
 {
     if(num_arg == 0)
     {
-        printf("Missing arguments");
+        //printf("Missing arguments");
+        strcpy(buf, "Missing Arguments");
         //return;
     } else {
-    printf("HELLO %s from this function\n",arg[1]);
-    return;
+    sprintf(buf, "HELLO %s from this function\n",arg[1]);
     }
+    return buf;
 }
 
 void app_main(void)
