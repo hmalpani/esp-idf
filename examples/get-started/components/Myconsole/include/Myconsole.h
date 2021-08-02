@@ -7,4 +7,6 @@
 
 void console_main(void);
 
-void register_command(char* cmd, char* cmd_info, void(*func_pointer)());
+void register_command(char* cmd, char* cmd_info, char*(*func_pointer)());
+
+void deinit();
